@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AdaptIQ Research Website</title>
+<style>
+    :root{
+      --bg:#0b111a;--surface:#101722;--card:#151e2b;--border:#263243;--text:#eaf2ff;--muted:#8fa0b6;--accent:#19dff2;--accent2:#8b5cf6;--accent3:#5eead4;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 0%,rgba(25,223,242,.08),transparent 35%),linear-gradient(rgba(25,223,242,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(25,223,242,.025) 1px,transparent 1px);background-size:auto,60px 60px,60px 60px;pointer-events:none;z-index:-1}
+    a{text-decoration:none;color:inherit}
+    .nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(11,17,26,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;z-index:99}
+    .logo{font-family:Impact,Arial Black,sans-serif;font-size:26px;letter-spacing:2px;color:var(--accent)}.logo span{color:#fff}
+    .nav ul{display:flex;gap:26px;list-style:none}.nav a{font-size:13px;text-transform:uppercase;font-weight:700;color:var(--muted);letter-spacing:.5px}.nav a:hover{color:var(--accent)}
+    section{padding:90px 5%}.container{max-width:1180px;margin:0 auto}.hero{min-height:100vh;display:flex;align-items:center;text-align:center;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:linear-gradient(135deg,rgba(25,223,242,.18),rgba(139,92,246,.12),transparent);filter:blur(60px);left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1}.hero h1{font-family:Impact,Arial Black,sans-serif;font-size:clamp(44px,7vw,84px);line-height:1.05;letter-spacing:1px;margin-bottom:24px}.hero h1 span{color:var(--accent)}.hero p{max-width:760px;margin:0 auto 34px;color:var(--muted);font-size:18px}.btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:55px}.btn{padding:13px 24px;border-radius:999px;border:1px solid var(--accent);font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.7px}.primary{background:var(--accent);color:#061018}.outline{color:var(--accent)}
+    .stats{display:flex;justify-content:center;gap:55px;flex-wrap:wrap}.stat b{display:block;font-family:Impact,Arial Black,sans-serif;color:var(--accent);font-size:34px}.stat span{font-family:monospace;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.5px}
+    .surface{background:var(--surface)}.tag{font-family:monospace;text-transform:uppercase;color:var(--accent);font-weight:800;letter-spacing:4px;font-size:13px;margin-bottom:18px}.section-title{font-family:Impact,Arial Black,sans-serif;text-transform:uppercase;font-size:clamp(42px,6vw,72px);letter-spacing:2px;line-height:1;margin-bottom:28px}.divider{width:58px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:20px;margin-bottom:70px}.lit p{color:var(--muted);font-size:17px;max-width:980px;margin-bottom:22px;font-weight:600}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:60px 0}.card{background:rgba(21,30,43,.82);border:1px solid var(--border);border-radius:16px;padding:34px;transition:.25s;position:relative;overflow:hidden}.card:hover{border-color:var(--accent);transform:translateY(-4px)}.card:before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:.25s}.card:hover:before{opacity:1}.icon{display:none}.card .mini{font-family:monospace;color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:900;margin-bottom:10px}.card h3{font-family:Impact,Arial Black,sans-serif;text-transform:uppercase;font-size:22px;margin-bottom:20px}.card p,.card li{color:var(--muted);font-size:16px;font-weight:650}.card ol{padding-left:18px}
+    .tech-title{font-family:monospace;text-transform:uppercase;color:var(--muted);letter-spacing:3px;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:28px}.pills{display:flex;gap:12px;flex-wrap:wrap}.pill{border:1px solid var(--border);border-radius:999px;padding:8px 18px;font-family:monospace;font-size:14px;font-weight:900;text-transform:uppercase;color:#cfd8e6;background:rgba(15,23,42,.55)}
+    .timeline{max-width:760px;margin:0 auto;position:relative;padding-left:54px}.timeline:before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent),var(--accent2),transparent)}.mile{position:relative;margin-bottom:24px}.mile:before{content:"";position:absolute;left:-42px;top:31px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 22px var(--accent);border:4px solid var(--bg)}.mile-date{font-family:monospace;text-transform:uppercase;color:var(--accent);font-size:12px;letter-spacing:2px;font-weight:900}.mile h3{margin:6px 0;color:#fff}.mile p{color:var(--muted);font-size:15px}.marks{display:inline-block;margin-top:12px;border:1px solid rgba(25,223,242,.25);background:rgba(25,223,242,.08);color:var(--accent);border-radius:999px;padding:4px 12px;font-family:monospace;font-size:12px;font-weight:900}
+    .doc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:70px}.doc{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-height:230px}.doc:hover{border-color:var(--accent3)}.doc-top{padding:26px;flex:1}.doc-icon{font-size:32px;margin-bottom:20px}.doc h3{font-size:23px;margin-bottom:16px;line-height:1.15}.doc p{color:var(--muted);font-size:15px;font-weight:650}.download-row{border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;padding:13px 20px;font-weight:800}.download-row a{color:#fff}.download-row a:hover{color:var(--accent)}
+    .people{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.person{text-align:center;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px}.person:hover{border-color:var(--accent);transform:translateY(-4px)}.avatar{width:130px;height:130px;border-radius:50%;object-fit:contain;margin:0 auto 18px;background:#050b12}.person h3{font-size:18px}.role{font-family:monospace;color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:5px 0}.email{color:var(--muted);font-size:13px;word-break:break-all}.supervisor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:70px}.supervisor-card{background:var(--card);border:1px solid var(--border);border-radius:26px;overflow:hidden;text-align:center}.supervisor-card img{width:100%;height:360px;object-fit:contain;padding:18px;background:#050b12}.supervisor-card div{padding:22px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact-info p{color:var(--muted);margin-bottom:25px}.info{display:flex;gap:14px;margin-bottom:20px;color:var(--muted)}.info b{display:block;color:#fff;text-transform:uppercase;font-size:12px;letter-spacing:1px}.institution-logo{width:92px;height:auto;margin:0 0 10px 0;display:block}.form input,.form textarea{width:100%;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--text);margin-bottom:16px}.form textarea{min-height:130px;resize:vertical}.form label{display:block;color:var(--muted);font-family:monospace;text-transform:uppercase;font-size:12px;letter-spacing:2px;margin-bottom:6px}.form button{width:100%;cursor:pointer}.footer{background:var(--surface);border-top:1px solid var(--border);padding:30px 5%}.footer-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;color:var(--muted);font-weight:700;font-size:13px}
+
+    /* requested alignment fixes */
+    .lit p{max-width:none;width:100%}
+    #domain .container{max-width:1280px}
+    #domain .grid2{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+    .institution-info{display:block}
+    .institution-info div{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+    .institution-logo{width:170px;max-width:220px;height:auto;margin:8px 0 4px 0;display:block;border:none;background:transparent;object-fit:contain}
+    .supervisor-card img{height:340px;object-fit:cover;object-position:center top;background:#050b12;padding:0}
+    .avatar{width:150px;height:150px;object-fit:cover;object-position:center top;background:#050b12;border:1px solid var(--border)}
+
+
+    /* final requested fixes only */
+    .institution-info{display:flex!important;gap:14px!important;align-items:flex-start!important}
+    .institution-info .institution-icon{width:30px!important;height:30px!important;object-fit:contain!important;flex:0 0 30px!important;margin-top:2px!important}
+    .supervisor-card img{width:100%!important;height:360px!important;object-fit:contain!important;object-position:center center!important;padding:14px!important;background:#050b12!important}
+
+    @media(max-width:900px){.nav ul{display:none}.grid2,.doc-grid,.people,.supervisor-grid,.contact-grid{grid-template-columns:1fr}.doc-grid{gap:16px}.section-title{font-size:42px}.hero h1{font-size:44px}.stats{gap:30px}.lit p{text-align:left}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+<a class="logo" href="#home">Adapt<span>IQ</span></a>
+<ul>
+<li><a href="#home">Home</a></li><li><a href="#domain">Domain</a></li><li><a href="#milestones">Milestones</a></li><li><a href="#documents">Downloads</a></li><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<section class="hero" id="home">
+<div class="container">
+<h1>An Adaptive <span>Intelligence</span> Framework<br/>for Data-Driven Optimization</h1>
+<p>Collaborative Software Project Environments — powered by adaptive AI, real-time analytics, and intelligent decision support.</p>
+<div class="btns"><a class="btn primary" href="#domain">Explore Research</a><a class="btn outline" href="#documents">View Documents</a></div>
+<div class="stats"><div class="stat"><b>4</b><span>Research Objectives</span></div><div class="stat"><b>3</b><span>Team Members</span></div><div class="stat"><b>8</b><span>Milestones</span></div><div class="stat"><b>AI</b><span>Core Technology</span></div></div>
+</div>
+</section>
+<section class="surface" id="domain">
+<div class="container">
+<div class="tag">Project Scope</div><h2 class="section-title">Domain Overview</h2><div class="divider"></div>
+<div class="lit" id="lit-survey">
+<div class="tag">Literature Survey</div>
+<p>Modern academic project management lacks intelligent automation for team formation, supervisor allocation, and progress monitoring. Existing approaches are mainly manual and static, often leading to poor team balance, mismatched supervision, and delayed project outcomes.</p>
+<p>Recent research highlights the use of Machine Learning for clustering students into balanced groups, Natural Language Processing for semantic matching between project topics and supervisor expertise, and LSTM-based models for predicting performance trends.</p>
+<p>This project addresses these gaps by implementing a unified AI-driven system using clustering algorithms, NLP-based matching, LSTM-based risk prediction, and a chatbot for real-time academic guidance.</p>
+</div>
+<div class="grid2">
+<div class="card" id="research-gap"><div class="mini">Research Gap</div><h3>What’s Missing Today</h3><p>Current academic project systems lack an integrated, intelligent approach to manage team formation, supervisor matching, and progress monitoring. Most solutions operate independently and rely on manual decisions without real-time data analysis.</p></div>
+<div class="card" id="research-problem"><div class="mini">Research Problem</div><h3>Core Challenge</h3><p>How can an AI-driven framework utilize student data, project descriptions, and real-time team activity to automatically form balanced groups, accurately match supervisors, and predict project risks to improve academic project success?</p></div>
+<div class="card" id="objectives"><div class="mini">Research Objectives</div><h3>Four Core Goals</h3><ol><li>Intelligent group formation using clustering.</li><li>Supervisor matching using NLP similarity.</li><li>Progress monitoring and risk prediction using LSTM.</li><li>Chatbot support for continuous project guidance.</li></ol></div>
+<div class="card" id="methodology"><div class="mini">Methodology</div><h3>Research Approach</h3><p>This research follows a Design Science approach using a modular AI system. K-Means supports team formation, TF-IDF supports supervisor matching, LSTM predicts team performance, and chatbot APIs provide real-time project guidance.</p></div>
+</div>
+<div id="tech"><div class="tech-title">Technologies Used</div><div class="pills"><span class="pill">Python</span><span class="pill">Flask</span><span class="pill">Scikit-Learn</span><span class="pill">TensorFlow</span><span class="pill">Keras</span><span class="pill">Pandas</span><span class="pill">NumPy</span><span class="pill">NLP</span><span class="pill">TF-IDF</span><span class="pill">LSTM</span><span class="pill">OpenAI API</span><span class="pill">REST API</span><span class="pill">WebSockets</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span></div></div>
+</div>
+</section>
+<section id="milestones">
+<div class="container">
+<div class="tag">Project Timeline</div><h2 class="section-title">Milestones</h2><div class="divider"></div>
+<div class="timeline">
+<div class="card mile"><div class="mile-date">August 2025</div><h3>Project Proposal</h3><p>Initial proposal outlining the research problem and objectives.</p><span class="marks">Marks: 6%</span></div>
+<div class="card mile"><div class="mile-date">January 2026</div><h3>Progress Presentation I</h3><p>50% completion review covering literature survey and initial prototypes.</p><span class="marks">Marks: 6%</span></div>
+<div class="card mile"><div class="mile-date">March 2026</div><h3>Research Paper</h3><p>Academic paper documenting novel contributions and experimental results.</p><span class="marks">Marks: 10%</span></div>
+<div class="card mile"><div class="mile-date">March 2026</div><h3>Progress Presentation II</h3><p>90% completion with system evaluation and performance metrics.</p><span class="marks">Marks: 18%</span></div>
+<div class="card mile"><div class="mile-date">April 2026</div><h3>Website Assessment</h3><p>Project website evaluated for content quality and completeness.</p><span class="marks">Marks: 2%</span></div>
+<div class="card mile"><div class="mile-date">May 2026</div><h3>Logbook &amp; Status Documents</h3><p>Validated project progress logbook with team contributions.</p><span class="marks">Marks: 4%</span></div>
+<div class="card mile"><div class="mile-date">May 2026</div><h3>Final Report</h3><p>Comprehensive final report covering design, implementation, and evaluation.</p><span class="marks">Marks: 19%</span></div>
+<div class="card mile"><div class="mile-date">May 2026</div><h3>Final Presentation &amp; Viva</h3><p>Final demonstration and individual viva assessment.</p><span class="marks">Marks: 20%</span></div>
+</div>
+</div>
+</section>
+<section class="surface" id="documents">
+<div class="container">
+<div class="tag">Downloads</div><h2 class="section-title">Documents</h2><div class="divider"></div>
+<p style="color:var(--muted);margin-bottom:35px;max-width:700px;font-weight:650">All project documents are listed below. Click Download to save the related project files.</p>
+<div class="doc-grid">
+<div class="doc"><div class="doc-top"><div class="doc-icon">📋</div><h3>Project Charter</h3><p>Submitted on 2025/07/23</p></div><div class="download-row"><span>Group</span><a download="25-26J-374_Project Charter.pdf" href="assets/25-26J-374_Project Charter.pdf">Download</a></div></div>
+<div class="doc"><div class="doc-top"><div class="doc-icon">📄</div><h3>Project Proposal</h3><p>Submitted on 2025/08/31</p></div><div class="download-row"><span>Individual</span><a href="#" onclick="downloadProjectProposals(event)">Download</a></div></div>
+<div class="doc"><div class="doc-top"><div class="doc-icon">✅</div><h3>Status Documents I</h3><p>Submitted on 2026/01/11</p></div><div class="download-row"><span>Individual</span><a download="README.md" href="assets/README.md">Download</a></div></div>
+<div class="doc"><div class="doc-top"><div class="doc-icon">✅</div><h3>Status Documents II</h3><p>Submitted on 2026/04/30</p></div><div class="download-row"><span>Individual</span><a href="#">Download</a></div></div>
+<div class="doc"><div class="doc-top"><div class="doc-icon">📰</div><h3>Research Paper</h3><p>Submitted on 2026/05/08</p></div><div class="download-row"><span>Group</span><a download="25-26J-374_Research paper.pdf" href="assets/25-26J-374_Research paper.pdf">Download</a></div></div>
+<div class="doc"><div class="doc-top"><div class="doc-icon">📑</div><h3>Final Report</h3><p>Submitted on 2026/05/13</p></div><div class="download-row"><span>Group</span><a href="#">Download</a></div><div class="download-row"><span>Individual</span><a href="#">Download</a></div></div>
+</div>
+<div class="tag" id="presentations">Slides</div><h2 class="section-title" style="font-size:48px">Presentations</h2><div class="divider"></div>
+<div class="doc-grid">
+<div class="doc"><div class="doc-top"><div class="doc-icon">🎤</div><h3>Proposal Presentation</h3></div><div class="download-row"><span>Group</span><a download="25-26J-374_Proposal_Presentation.pdf" href="assets/25-26J-374_Proposal_Presentation.pdf">Download</a></div></div>
+<div class="doc"><div class="doc-top"><div class="doc-icon">📈</div><h3>Progress Presentation I</h3></div><div class="download-row"><span>Group</span><a download="25-26J-374_pp1.pdf" href="assets/25-26J-374_pp1.pdf">Download</a></div></div>
+<div class="doc"><div class="doc-top"><div class="doc-icon">📊</div><h3>Progress Presentation II</h3></div><div class="download-row"><span>Group</span><a download="25-26J-374_pp2.pdf" href="assets/25-26J-374_pp2.pdf">Download</a></div></div>
+<div class="doc"><div class="doc-top"><div class="doc-icon">🏁</div><h3>Final Presentation</h3></div><div class="download-row"><span>Group</span><a href="#">Download</a></div></div>
+</div>
+</div>
+</section>
+<section class="surface" id="about">
+<div class="container">
+<div class="tag">The Team</div><h2 class="section-title">About Us</h2><div class="divider"></div>
+<div class="tech-title">Supervisors</div>
+<div class="supervisor-grid">
+<div class="supervisor-card"><img alt="Main Supervisor" src="assets/main-supervisor.jpeg"/><div><h3>Prof. Samantha Rajapaksha</h3><p class="role">Main Supervisor</p><p class="email">samantha.r@sliit.lk</p></div></div>
+<div class="supervisor-card"><img alt="Co Supervisor" src="assets/co-supervisor.jpeg"/><div><h3>Ms. Poorna Panduwawala</h3><p class="role">Co-Supervisor</p><p class="email">poorna.p@sliit.lk</p></div></div>
+</div>
+<div class="tech-title">Group Members</div>
+<div class="people">
+<div class="person"><img alt="Komila K" class="avatar" src="assets/member1.jpeg"/><h3>Komila K</h3><p class="role">IT22029218</p><p class="email">it22029218@my.sliit.lk</p></div>
+<div class="person"><img alt="Mayoorabi U" class="avatar" src="assets/member2.jpeg"/><h3>Mayoorabi U</h3><p class="role">IT22322494</p><p class="email">it22322494@my.sliit.lk</p></div>
+<div class="person"><img alt="Mohanakumar N" class="avatar" src="assets/member3.jpeg"/><h3>Mohanakumar N</h3><p class="role">IT22919564</p><p class="email">it22919564@my.sliit.lk</p></div>
+</div>
+</div>
+</section>
+<section id="contact">
+<div class="container">
+<div class="tag">Get in Touch</div><h2 class="section-title">Contact Us</h2><div class="divider"></div>
+<div class="contact-grid">
+<div class="contact-info"><p>Have questions about our research? Reach out to the team directly or use the form.</p><div class="info"><span>📧</span><div><b>General Email</b>team.adaptiq@gmail.com</div></div><div class="info institution-info"><img alt="SLIIT Logo" class="institution-icon" src="assets/sliit-logo.svg"/><div><b>Institution</b><span>Sri Lanka Institute of Information Technology (SLIIT)</span></div></div><div class="info"><span>📍</span><div><b>Location</b>Malabe, Colombo, Sri Lanka</div></div></div>
+<form class="form" onsubmit="alert('Message sent!'); return false;"><label>Name</label><input placeholder="Your full name" required="" type="text"/><label>Email</label><input placeholder="your@email.com" required="" type="email"/><label>Message</label><textarea placeholder="Your message or query..."></textarea><button class="btn primary" type="submit">Send Message →</button></form>
+</div>
+</div>
+</section>
+<footer class="footer"><div class="footer-inner"><div class="logo">Adapt<span>IQ</span></div><p>© 2025 An Adaptive Intelligence Framework · SLIIT · All rights reserved.</p><p>HTML · CSS</p></div></footer>
+<script>
+function triggerDownload(url, name) {
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = name;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+function downloadProjectProposals(event) {
+  event.preventDefault();
+  const files = [
+    { url: 'assets/IT22029218_Proposal_Final.pdf', name: 'IT22029218_Proposal_Final.pdf' },
+    { url: 'assets/IT22322494_Proposal_Final.pdf', name: 'IT22322494_Proposal_Final.pdf' },
+    { url: 'assets/IT22919564_Proposal_Final.pdf', name: 'IT22919564_Proposal_Final.pdf' }
+  ];
+  files.forEach((file, index) => setTimeout(() => triggerDownload(file.url, file.name), index * 700));
+}
+</script>
+</body>
+</html>
